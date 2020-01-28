@@ -1,0 +1,44 @@
+#!/bin/bash
+
+while getopts ":t:n:d:a:h:" opt; do
+    case $opt in
+    t)
+        TARGET="$OPTARG"
+        ;;
+    n)
+        WINDOW_COUNT="$OPTARG"
+        ;;
+    d)
+        WORKING_DIR="$OPTARG"
+        ;;
+    a)
+        ARGS="$OPTARG"
+        ;;
+    h)
+        echo "usage:  run_linux -t <server|player>  [-d dir]  [-a \"target args\"]" && exit -1
+        ;;
+    \?)
+        echo "Invalid option -$OPTARG" >&2
+        ;;
+    esac
+done
+
+[[ -z $TARGET || $TARGET -ne "server" || $TARGET -ne "player" ]] && echo "specify the script target <server|player>" && exit -1
+[[ -z $WORKING_DIR ]] && WORKING_DIR=$(pwd)
+[[ -z $WINDOW_COUNT ]] && WINDOW_COUNT=1
+[[ -z $WINDOW_COUNT ]] && echo no parameters to forward given
+
+echo "run: working directory: $WORKING_DIR"
+
+[[ ! -e "$WORKING_DIR/bin/$TARGET/$TARGET.jar" ]] && echo "it seems that you forgot to compile the code first" && exit -1
+
+exec 3<&1
+coproc mytee { tee "$WORKING_DIR/$TARGET.log" >&3; }
+exec >&${mytee[1]} 2>&1
+
+echo forwarding args: $ARGS
+
+while [ $WINDOW_COUNT -gt 0 ]; do
+    java -jar "$WORKING_DIR/bin/$TARGET/$TARGET.jar" $ARGS &
+    WINDOW_COUNT=$(($WINDOW_COUNT - 1))
+done

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+usage(){
+	echo "usage:	./compile_linux <player|server> [working dir]"
+	exit
+}
+
+TARGET=$1
+WORKING_DIR=$2
+[[ -z $TARGET ]] && usage
+[[ "$TARGET" -ne "player" && "$TARGET" -ne "server" ]] && usage
+[[ -z $WORKING_DIR ]] && WORKING_DIR=$(pwd)
+
+cd "$WORKING_DIR"
+
+echo "target: $TARGET"
+echo "build: working directory: $WORKING_DIR"
+
+cd "$WORKING_DIR/bin"
+
+if [[ "$TARGET" == "server" ]]; then
+
+	cd "$WORKING_DIR/s18749/Server"
+	javac -d "$WORKING_DIR/bin/$TARGET" *.java
+	cp "$WORKING_DIR/s18749/Server/manifest.mf" "$WORKING_DIR/bin/$TARGET/manifest.mf"
+	
+	cd "$WORKING_DIR/bin/$TARGET"
+	jar cmf manifest.mf server.jar *
+elif [[ "$TARGET" == "player" ]]; then
+
+	javac -d "$WORKING_DIR/bin/$TARGET" -cp "$WORKING_DIR/s18749/Player" "$WORKING_DIR/s18749/Player/"*.java "$WORKING_DIR/s18749/Player/views/"*.java
+	cp "$WORKING_DIR/s18749/Player/manifest.mf" "$WORKING_DIR/bin/$TARGET/manifest.mf"
+	
+	cd "$WORKING_DIR/bin/$TARGET"
+	jar cmf manifest.mf player.jar *
+	
+fi
+
+rm -rf "$WORKING_DIR/bin/$TARGET/s18749/" "$WORKING_DIR/bin/$TARGET/manifest.mf"

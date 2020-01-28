@@ -1,0 +1,42 @@
+forwarding args: localhost 5252
+listener
+listener
+17requesting new game...
+17ID a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+17waiting for opponent
+17requesting new game...
+17found match
+17START 1 CROSS 0 RSP
+17ID 0bccea13-d9b5-451b-8f66-c40c44841be1
+17waiting for opponent
+17found match
+17START 0 CROSS 1 RSP
+17waiting for move... (0bccea13-d9b5-451b-8f66-c40c44841be1)
+17waiting for move... (a0addd64-3fff-4a92-b5e5-8398f4bcd1e1)
+17opponent moved: STATE 0 0 false RSP
+17updating model for: 0bccea13-d9b5-451b-8f66-c40c44841be1
+17waiting for move... (0bccea13-d9b5-451b-8f66-c40c44841be1)
+17opponent moved: STATE 2 0 false RSP
+17updating model for: a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+17waiting for move... (a0addd64-3fff-4a92-b5e5-8398f4bcd1e1)
+17opponent moved: STATE 2 2 false RSP
+17updating model for: 0bccea13-d9b5-451b-8f66-c40c44841be1
+17waiting for move... (0bccea13-d9b5-451b-8f66-c40c44841be1)
+17opponent moved: STATE 0 2 false RSP
+17updating model for: a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+17waiting for move... (a0addd64-3fff-4a92-b5e5-8398f4bcd1e1)
+17opponent moved: STATE 2 1 false RSP
+17updating model for: 0bccea13-d9b5-451b-8f66-c40c44841be1
+17waiting for move... (0bccea13-d9b5-451b-8f66-c40c44841be1)
+17opponent moved: LOSE 246 1 1 RSP
+2-4-6-
+17updating model for: a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+17opponent moved: WIN 246 RSP
+2-4-6-
+17requesting new game...
+17ERR: server did not respond with the valid ID
+17requesting new game...
+17ID a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+17waiting for opponent
+15exiting...
+15exiting...

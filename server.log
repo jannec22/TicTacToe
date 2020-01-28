@@ -1,0 +1,76 @@
+forwarding args: 5252 -b 5245 4212
+-b
+broadcast port: 5245
+broadcast port: 4212
+new player accepted
+new player accepted
+listening for player commands
+listening for player commands
+COMMAND: 'LOGOUT REQ'
+client logged out
+client exited
+COMMAND: 'LOGOUT REQ'
+client logged out
+client exited
+new player accepted
+listening for player commands
+new player accepted
+listening for player commands
+COMMAND: 'PLAY REQ'
+requested new game
+true true 0
+COMMAND: 'PLAY REQ'
+requested new game
+opponent found20
+opponent found20
+matched users: 0bccea13-d9b5-451b-8f66-c40c44841be1 and a0addd64-3fff-4a92-b5e5-8398f4bcd1e1
+matched users: a0addd64-3fff-4a92-b5e5-8398f4bcd1e1 and 0bccea13-d9b5-451b-8f66-c40c44841be1
+COMMAND: 'MOVE 0 0 REQ'
+NOT UPDATING ITSELF
+UPDATING OPPONENT
+broadcasting on: /192.168.240.255:5245
+COMMAND: 'MOVE 2 0 REQ'
+NOT UPDATING ITSELF
+UPDATING OPPONENT
+broadcasting on: /192.168.240.255:5245
+COMMAND: 'MOVE 2 2 REQ'
+NOT UPDATING ITSELF
+UPDATING OPPONENT
+broadcasting on: /192.168.240.255:5245
+COMMAND: 'MOVE 0 2 REQ'
+NOT UPDATING ITSELF
+UPDATING OPPONENT
+broadcasting on: /192.168.240.255:5245
+COMMAND: 'MOVE 2 1 REQ'
+NOT UPDATING ITSELF
+UPDATING OPPONENT
+broadcasting on: /192.168.240.255:5245
+COMMAND: 'MOVE 1 1 REQ'
+broadcasting on: /192.168.240.255:5245
+NO OPPONENT
+client exited
+COMMAND: 'PLAY REQ'
+requested new game
+true true 0
+NO_OPPONENTS 10
+true true 1
+NO_OPPONENTS 9
+true true 2
+NO_OPPONENTS 8
+true true 3
+NO_OPPONENTS 7
+true true 4
+NO_OPPONENTS 6
+true true 5
+NO_OPPONENTS 5
+true true 6
+NO_OPPONENTS 4
+true true 7
+NO_OPPONENTS 3
+true true 8
+NO_OPPONENTS 2
+true true 9
+NO_OPPONENTS 1
+COMMAND: 'LOGOUT REQ'
+client logged out
+client exited

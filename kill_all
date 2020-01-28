@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ps -ef | grep TicTacToe | grep java | awk '{print $2}' | xargs kill -9
+ps -ef | grep Server | grep java | awk '{print $2}' | xargs kill -9
